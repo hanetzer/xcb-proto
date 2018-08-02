@@ -41,8 +41,8 @@ if xmllint.found()
   #foreach p : proto
   # run_command(xmllint, '--noout', '--schema', schema, p)
   #endforeach
-  run_target('check-local',
-      command : [ xmllint, '--noout', '--schema', schema, proto ]
+  test('check-local',
+      xmllint, args : ['--noout', '--schema', schema, proto ]
   )
 else
   warning('xmllint not found; unable to validate against schema.')
