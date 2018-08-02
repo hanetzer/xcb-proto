@@ -1,0 +1,6 @@
+option(
+    'install-proto',
+    type : 'boolean',
+    value : true,
+    description : 'Install xcb protocol xml files'
+)
